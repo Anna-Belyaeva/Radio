@@ -30,6 +30,19 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test  ///пограничные значения
+    public void shouldSetRadioStationUnderMin() {
+        Radio radio = new Radio();
+        radio.setCurrentRadioStation(4);
+
+        radio.setCurrentRadioStation(-1);
+
+        int expected = 4;
+        int actual = radio.getCurrentRadioStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
     @Test
     public void shouldSetRadioStation1() {
         Radio radio = new Radio();
